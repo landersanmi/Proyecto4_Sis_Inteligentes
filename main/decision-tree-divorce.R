@@ -25,7 +25,7 @@ print(data)
 best_tree <- list()
 # Percentaje of training examples
 training_p <- 0.8
-for (i in 1:5) {
+for (i in 1:10) {
   # Generate data partition 80% training / 20% test. The result is a vector with the indexes 
   # of the examples that will be used for the training of the model.
   training_indexes <- createDataPartition(y = data$Class, p = training_p, list = FALSE)
@@ -45,6 +45,8 @@ for (i in 1:5) {
   prediction_results <- table(test_data$Class, prediction)
   matrix <- confusionMatrix(prediction_results)
   accuracy <- matrix$overall[1]
+  print(paste0("Importancia de las variables:"))
+  print(model$variable.importance)
   attrs <- names(model$variable.importance)
   
   # Compare if this is a better tree
@@ -66,13 +68,13 @@ for (i in 1:5) {
   }
   
   # Print the rules that represent the Tree
-  rpart.rules(model, extra = 4, cover = TRUE)
+  rpart.rules(model, extra = 4, cover = TRUE, nn=TRUE, digits = 2)
 }
 
 # Plot tree (this method is slow, wait until pot is completed)
 rpart.plot(best_tree$model, 
-           type = 2,
-           extra = 101,
+           type = 4,
+           extra = "auto", #101,
            fallen.leaves = FALSE,
            main = "Prescription", 
            sub = paste0("Acccuracy = ", round(accuracy, digits = 4)))
