@@ -1,0 +1,399 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Dec.~Tree Divorce - AmaIA},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Dec.~Tree Divorce - AmaIA}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Clear plots}
+\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{is.null}\NormalTok{(}\FunctionTok{dev.list}\NormalTok{())) }\FunctionTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## null device 
+##           1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Clear console}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}014}\StringTok{"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\newpage{}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Clean workspace}
+\FunctionTok{rm}\NormalTok{(}\AttributeTok{list=}\FunctionTok{ls}\NormalTok{())}
+\CommentTok{\# Set working directory}
+\FunctionTok{setwd}\NormalTok{(}\FunctionTok{dirname}\NormalTok{(rstudioapi}\SpecialCharTok{::}\FunctionTok{getActiveDocumentContext}\NormalTok{()}\SpecialCharTok{$}\NormalTok{path))}
+
+\CommentTok{\# Install required packages}
+\FunctionTok{library}\NormalTok{(lattice)}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{library}\NormalTok{(caret)}
+\FunctionTok{library}\NormalTok{(rpart)}
+\FunctionTok{library}\NormalTok{(rpart.plot)}
+
+\CommentTok{\# Read data from CSV}
+\NormalTok{filename }\OtherTok{=} \StringTok{"../data/divorce.csv"}
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\AttributeTok{file =}\NormalTok{ filename, }\AttributeTok{sep =}\StringTok{";"}\NormalTok{, }\AttributeTok{header =} \ConstantTok{TRUE}\NormalTok{)}
+
+\CommentTok{\# Convert columns to factors}
+\NormalTok{index }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{ncol}\NormalTok{(data)}
+\NormalTok{data[ , index] }\OtherTok{\textless{}{-}} \FunctionTok{lapply}\NormalTok{(data[ , index], as.factor)}
+
+\FunctionTok{print}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Atr1 Atr2 Atr3 Atr4 Atr5 Atr6 Atr7 Atr8 Atr9 Atr10 Atr11 Atr12 Atr13 Atr14 Atr15 Atr16 Atr17 Atr18 Atr19 Atr20 Atr21 Atr22 Atr23 Atr24 Atr25 Atr26 Atr27 Atr28 Atr29 Atr30 Atr31 Atr32 Atr33 Atr34 Atr35 Atr36 Atr37 Atr38 Atr39 Atr40 Atr41 Atr42
+## 1     2    2    4    1    0    0    0    0    0     0     1     0     1     1     0     1     0     0     0     1     0     0     0     0     0     0     0     0     0     1     1     2     1     2     0     1     2     1     3     3     2     1
+## 2     4    4    4    4    4    0    0    4    4     4     4     3     4     0     4     4     4     4     3     2     1     1     0     2     2     1     2     0     1     1     0     4     2     3     0     2     3     4     2     4     2     2
+## 3     2    2    2    2    1    3    2    1    1     2     3     4     2     3     3     3     3     3     3     2     1     0     1     2     2     2     2     2     3     2     3     3     1     1     1     1     2     1     3     3     3     3
+## 4     3    2    3    2    3    3    3    3    3     3     4     3     3     4     3     3     3     3     3     4     1     1     1     1     2     1     1     1     1     3     2     3     2     2     1     1     3     3     4     4     2     2
+## 5     2    2    1    1    1    1    0    0    0     0     0     1     0     1     1     1     1     1     2     1     1     0     0     0     0     2     1     2     1     1     1     1     1     1     0     0     0     0     2     1     0     2
+## 6     0    0    1    0    0    2    0    0    0     1     0     2     1     0     2     0     2     1     0     1     0     0     0     0     2     2     0     0     0     0     4     1     1     1     1     1     1     2     0     2     2     1
+## 7     3    3    3    2    1    3    4    3    2     2     2     2     2     3     2     3     3     3     3     2     3     3     3     3     2     3     3     2     2     2     1     2     2     1     1     2     3     2     2     3     3     3
+## 8     2    1    2    2    2    1    0    3    3     2     4     3     2     3     4     3     2     3     2     1     2     1     1     2     3     3     2     2     2     3     1     1     0     2     2     1     4     4     4     4     4     4
+## 9     2    2    1    0    0    4    1    3    3     3     3     3     3     3     3     3     3     3     3     3     2     2     2     3     2     3     2     3     2     3     1     1     1     1     1     1     1     2     2     2     2     2
+## 10    1    1    1    1    1    2    0    2    2     2     3     0     0     2     1     0     1     2     1     0     0     0     0     1     1     1     1     1     1     1     1     1     0     1     0     0     1     1     2     2     1     2
+## 11    4    4    4    3    4    0    0    4    4     3     4     4     4     4     4     3     4     4     4     4     4     3     4     4     4     4     4     3     4     4     4     4     4     4     4     4     4     4     4     4     4     4
+## 12    4    4    4    3    4    0    0    4    4     3     4     4     4     4     4     3     4     4     4     4     4     3     4     4     4     4     4     3     4     4     4     4     4     4     4     4     4     4     4     4     4     4
+## 13    3    4    3    4    3    0    1    4    3     4     3     4     3     4     3     4     3     4     3     4     3     4     3     4     3     4     3     4     3     4     4     4     4     4     4     4     4     4     4     4     4     4
+## 14    3    4    3    4    3    0    1    4    3     4     3     4     3     4     3     4     3     4     3     4     3     4     3     4     3     4     3     4     3     4     4     4     4     4     4     4     4     4     4     4     4     4
+## 15    3    4    3    4    3    0    1    4    3     4     3     4     3     4     3     4     3     4     3     4     3     4     3     4     3     4     3     4     3     4     4     4     4     4     4     4     4     4     4     4     4     4
+## 16    4    4    3    2    4    0    0    4    3     2     4     4     4     4     3     2     4     4     4     4     3     2     4     4     4     4     3     2     4     4     4     4     4     4     4     4     4     4     4     4     4     4
+## 17    4    4    3    2    4    0    0    4    3     2     4     4     4     4     3     2     4     4     4     4     3     2     4     4     4     4     3     2     4     4     4     4     4     4     4     4     4     4     4     4     4     4
+## 18    4    4    4    3    4    0    0    4    4     3     4     4     4     4     4     3     4     4     4     4     4     3     4     4     4     4     4     3     4     4     4     3     4     3     4     3     4     3     4     3     4     3
+##    Atr43 Atr44 Atr45 Atr46 Atr47 Atr48 Atr49 Atr50 Atr51 Atr52 Atr53 Atr54 Class
+## 1      1     2     3     2     1     3     3     3     2     3     2     1     1
+## 2      3     4     2     2     2     3     4     4     4     4     2     2     1
+## 3      2     3     2     3     2     3     1     1     1     2     2     2     1
+## 4      3     2     3     2     2     3     3     3     3     2     2     2     1
+## 5      3     0     2     2     1     2     3     2     2     2     1     0     1
+## 6      2     3     0     2     2     1     2     1     1     1     2     0     1
+## 7      3     4     3     3     2     3     2     3     3     2     2     2     1
+## 8      3     2     0     0     1     2     2     2     1     1     1     0     1
+## 9      2     2     2     1     1     1     1     1     1     1     1     1     1
+## 10     3     2     2     2     0     2     2     2     2     4     3     3     1
+## 11     4     4     4     4     4     4     4     4     4     4     4     4     1
+## 12     4     4     4     4     4     4     4     4     4     4     4     4     1
+## 13     4     4     4     4     4     4     4     4     4     4     4     4     1
+## 14     4     4     4     4     4     4     4     4     4     4     4     4     1
+## 15     4     3     4     4     4     4     4     4     4     4     4     4     1
+## 16     4     4     4     4     4     4     4     4     4     4     4     4     1
+## 17     4     4     4     4     4     4     4     4     4     4     4     4     1
+## 18     4     3     4     3     4     3     4     4     3     4     3     4     1
+##  [ reached 'max' / getOption("max.print") -- omitted 152 rows ]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Percentaje of training examples}
+\NormalTok{training\_p }\OtherTok{\textless{}{-}} \FloatTok{0.8}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{) \{}
+  \CommentTok{\# Generate data partition 80\% training / 20\% test. The result is a vector with the indexes }
+  \CommentTok{\# of the examples that will be used for the training of the model.}
+\NormalTok{  training\_indexes }\OtherTok{\textless{}{-}} \FunctionTok{createDataPartition}\NormalTok{(}\AttributeTok{y =}\NormalTok{ data}\SpecialCharTok{$}\NormalTok{Class, }\AttributeTok{p =}\NormalTok{ training\_p, }\AttributeTok{list =} \ConstantTok{FALSE}\NormalTok{)}
+  
+  \CommentTok{\# Split training and test data}
+\NormalTok{  training\_data }\OtherTok{\textless{}{-}}\NormalTok{ data[training\_indexes, ]  }\CommentTok{\# Extract training data using training\_indexes}
+\NormalTok{  test\_data     }\OtherTok{\textless{}{-}}\NormalTok{ data[}\SpecialCharTok{{-}}\NormalTok{training\_indexes, ] }\CommentTok{\# Extract data with the indexes not included in training\_indexes }
+  
+  \CommentTok{\# Create Linear Model using training data. Formula = all the columns except Class}
+\NormalTok{  model }\OtherTok{\textless{}{-}} \FunctionTok{rpart}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ Class }\SpecialCharTok{\textasciitilde{}}\NormalTok{., }\AttributeTok{data =}\NormalTok{ training\_data, }\AttributeTok{minsplit=} \DecValTok{3}\NormalTok{ , }\AttributeTok{minbucket=}\DecValTok{1}\NormalTok{, }\AttributeTok{maxdepth=}\DecValTok{5}\NormalTok{)}
+  
+  \CommentTok{\# Make the prediction using the model and test data}
+\NormalTok{  prediction }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(model, test\_data, }\AttributeTok{type =} \StringTok{"class"}\NormalTok{)}
+  
+  \CommentTok{\# Calculate accuracy using Confusion Matrix}
+\NormalTok{  prediction\_results }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(test\_data}\SpecialCharTok{$}\NormalTok{Class, prediction)}
+\NormalTok{  matrix }\OtherTok{\textless{}{-}} \FunctionTok{confusionMatrix}\NormalTok{(prediction\_results)}
+\NormalTok{  accuracy }\OtherTok{\textless{}{-}}\NormalTok{ matrix}\SpecialCharTok{$}\NormalTok{overall[}\DecValTok{1}\NormalTok{]}
+  \FunctionTok{print}\NormalTok{(}\FunctionTok{paste0}\NormalTok{(}\StringTok{"Importancia de las variables:"}\NormalTok{))}
+  \FunctionTok{print}\NormalTok{(model}\SpecialCharTok{$}\NormalTok{variable.importance)}
+\NormalTok{  attrs }\OtherTok{\textless{}{-}} \FunctionTok{names}\NormalTok{(model}\SpecialCharTok{$}\NormalTok{variable.importance)}
+  
+  \FunctionTok{print}\NormalTok{(}\FunctionTok{paste0}\NormalTok{(}\StringTok{"Accuracy = "}\NormalTok{, }\FunctionTok{round}\NormalTok{(accuracy, }\AttributeTok{digits =} \DecValTok{8}\NormalTok{)), }\AttributeTok{quote =} \ConstantTok{FALSE}\NormalTok{)}
+  
+  \ControlFlowTok{for}\NormalTok{ (j }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(attrs)) \{}
+    \FunctionTok{print}\NormalTok{(}\FunctionTok{paste0}\NormalTok{(}\StringTok{"  "}\NormalTok{, attrs[j]), }\AttributeTok{quote =} \ConstantTok{FALSE}\NormalTok{)}
+\NormalTok{  \}}
+  
+  \CommentTok{\# Print the rules that represent the Tree}
+  \FunctionTok{rpart.rules}\NormalTok{(model, }\AttributeTok{extra =} \DecValTok{9}\NormalTok{, }\AttributeTok{cover =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{digits =} \DecValTok{8}\NormalTok{)}
+  
+  \CommentTok{\# Plot tree (this method is slow, wait until pot is completed)}
+  \FunctionTok{rpart.plot}\NormalTok{(model,}
+             \AttributeTok{type =} \DecValTok{2}\NormalTok{,}
+             \AttributeTok{extra =} \DecValTok{101}\NormalTok{,}
+             \AttributeTok{fallen.leaves =} \ConstantTok{FALSE}\NormalTok{,}
+             \AttributeTok{main =} \FunctionTok{paste0}\NormalTok{(}\StringTok{"Resultado del arbol Nº"}\NormalTok{, }\FunctionTok{as.character}\NormalTok{(i)),}
+             \AttributeTok{sub =} \FunctionTok{paste0}\NormalTok{(}\StringTok{"Acccuracy = "}\NormalTok{, }\FunctionTok{round}\NormalTok{(accuracy, }\AttributeTok{digits =} \DecValTok{8}\NormalTok{)))}
+
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Importancia de las variables:"
+##     Atr19     Atr11     Atr16     Atr20      Atr9     Atr17     Atr39     Atr26 
+## 64.609026 62.651177 62.651177 62.651177 62.651177 61.672252  1.971429  1.915895 
+## [1] Accuracy = 0.93939394
+## [1]   Atr19
+## [1]   Atr11
+## [1]   Atr16
+## [1]   Atr20
+## [1]   Atr9
+## [1]   Atr17
+## [1]   Atr39
+## [1]   Atr26
+\end{verbatim}
+
+\begin{verbatim}
+## [1] "Importancia de las variables:"
+##     Atr18     Atr16     Atr17     Atr20      Atr9     Atr19     Atr26 
+## 66.524922 64.539103 64.539103 64.539103 64.539103 63.546194  1.971429 
+## [1] Accuracy = 0.96969697
+## [1]   Atr18
+## [1]   Atr16
+## [1]   Atr17
+## [1]   Atr20
+## [1]   Atr9
+## [1]   Atr19
+## [1]   Atr26
+\end{verbatim}
+
+\begin{verbatim}
+## [1] "Importancia de las variables:"
+##     Atr18     Atr16     Atr17     Atr20      Atr9     Atr14     Atr26      Atr3 
+## 64.609026 62.651177 62.651177 62.651177 62.651177 61.672252  1.971429  1.915895 
+## [1] Accuracy = 0.96969697
+## [1]   Atr18
+## [1]   Atr16
+## [1]   Atr17
+## [1]   Atr20
+## [1]   Atr9
+## [1]   Atr14
+## [1]   Atr26
+## [1]   Atr3
+\end{verbatim}
+
+\begin{verbatim}
+## [1] "Importancia de las variables:"
+##      Atr17      Atr18      Atr15      Atr20      Atr11      Atr19      Atr40      Atr26       Atr3      Atr39       Atr9 
+## 62.7463504 61.6309108 60.8156934 60.8156934 60.6655824 59.8503650  2.4456522  1.9710145  1.3333333  0.8152174  0.8152174 
+## [1] Accuracy = 0.90909091
+## [1]   Atr17
+## [1]   Atr18
+## [1]   Atr15
+## [1]   Atr20
+## [1]   Atr11
+## [1]   Atr19
+## [1]   Atr40
+## [1]   Atr26
+## [1]   Atr3
+## [1]   Atr39
+## [1]   Atr9
+\end{verbatim}
+
+\begin{verbatim}
+## [1] "Importancia de las variables:"
+##      Atr9     Atr16     Atr20     Atr17     Atr19      Atr8     Atr26     Atr39 
+## 62.746350 60.815693 60.815693 59.850365 59.850365 58.885036  3.778571  1.971429 
+## [1] Accuracy = 0.96969697
+## [1]   Atr9
+## [1]   Atr16
+## [1]   Atr20
+## [1]   Atr17
+## [1]   Atr19
+## [1]   Atr8
+## [1]   Atr26
+## [1]   Atr39
+\end{verbatim}
+
+\begin{verbatim}
+## [1] "Importancia de las variables:"
+##     Atr17     Atr11     Atr16     Atr20     Atr12      Atr9     Atr26      Atr3 
+## 64.609026 62.651177 62.651177 62.651177 61.672252 61.672252  1.971429  1.915895 
+## [1] Accuracy = 0.90909091
+## [1]   Atr17
+## [1]   Atr11
+## [1]   Atr16
+## [1]   Atr20
+## [1]   Atr12
+## [1]   Atr9
+## [1]   Atr26
+## [1]   Atr3
+\end{verbatim}
+
+\begin{verbatim}
+## [1] "Importancia de las variables:"
+##     Atr18     Atr16     Atr19     Atr20     Atr29      Atr9     Atr26     Atr39 
+## 62.746350 60.815693 60.815693 60.815693 60.815693 60.815693  3.778571  1.971429 
+## [1] Accuracy = 1
+## [1]   Atr18
+## [1]   Atr16
+## [1]   Atr19
+## [1]   Atr20
+## [1]   Atr29
+## [1]   Atr9
+## [1]   Atr26
+## [1]   Atr39
+\end{verbatim}
+
+\begin{verbatim}
+## [1] "Importancia de las variables:"
+##      Atr9     Atr16     Atr20     Atr17      Atr5      Atr8     Atr26 
+## 64.609026 62.651177 62.651177 61.672252 61.672252 61.672252  3.887324 
+## [1] Accuracy = 0.93939394
+## [1]   Atr9
+## [1]   Atr16
+## [1]   Atr20
+## [1]   Atr17
+## [1]   Atr5
+## [1]   Atr8
+## [1]   Atr26
+\end{verbatim}
+
+\begin{verbatim}
+## [1] "Importancia de las variables:"
+##     Atr18     Atr19     Atr14     Atr16      Atr9      Atr8     Atr39 
+## 64.609026 64.567073 62.651177 62.651177 62.651177 61.672252  1.971429 
+## [1] Accuracy = 0.93939394
+## [1]   Atr18
+## [1]   Atr19
+## [1]   Atr14
+## [1]   Atr16
+## [1]   Atr9
+## [1]   Atr8
+## [1]   Atr39
+\end{verbatim}
+
+\begin{verbatim}
+## [1] "Importancia de las variables:"
+##     Atr18     Atr16     Atr20      Atr9     Atr14     Atr19     Atr39     Atr26 
+## 64.609026 62.651177 62.651177 62.651177 61.672252 61.672252  1.971429  1.915895 
+## [1] Accuracy = 1
+## [1]   Atr18
+## [1]   Atr16
+## [1]   Atr20
+## [1]   Atr9
+## [1]   Atr14
+## [1]   Atr19
+## [1]   Atr39
+## [1]   Atr26
+\end{verbatim}
+
+\end{document}
