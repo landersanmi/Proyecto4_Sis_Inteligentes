@@ -19,15 +19,14 @@ filename = "../data/divorce.csv"
 data <- read.csv(file = filename, sep =";", header = TRUE)
 
 ############################### GENERATE HTML REPORT #############################
-library(rmarkdown)
-render("decision-tree-divorce.Rmd", output_file = "Divorce_Report_AmaIA")
+# library(rmarkdown)
+# render("decision-tree-divorce.Rmd", output_file = "Divorce_Report_AmaIA")
 ##################################################################################
 
 # Convert columns to factors
 index <- 1:ncol(data)
 data[ , index] <- lapply(data[ , index], as.factor)
 
-print(data)
 # Percentaje of training examples
 training_p <- 0.8
 for (i in 1:10) {
@@ -54,10 +53,6 @@ for (i in 1:10) {
   attrs <- names(model$variable.importance)
   
   print(paste0("Accuracy = ", round(accuracy, digits = 8)), quote = FALSE)
-  
-  for (j in 1:length(attrs)) {
-    print(paste0("  ", attrs[j]), quote = FALSE)
-  }
   
   # Print the rules that represent the Tree
   rpart.rules(model, extra = 9, cover = TRUE, digits = 8)

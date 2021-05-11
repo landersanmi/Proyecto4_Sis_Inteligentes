@@ -1,9 +1,11 @@
 ---
-title: "Dec. Tree Divorce - AmaIA"
+title: "Decision Trees Divorce - AmaIA"
 output: 
-  pdf_document: default
+  html_document: default
 ---
-```{r}
+
+#### Clean Environment & set path location
+```{r eval=FALSE} 
 # Clear plots
 if(!is.null(dev.list())) dev.off()
 # Clear console
@@ -12,25 +14,31 @@ cat("\014")
 rm(list=ls())
 # Set working directory
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-
-# Install required packages
+```
+#### Intall required packages
+```{r}
 library(lattice)
 library(ggplot2)
 library(caret)
 library(rpart)
 library(rpart.plot)
-
-# Read data from CSV
+```
+#### Read data from CSV
+```{r}
 filename = "../data/divorce.csv"
 data <- read.csv(file = filename, sep =";", header = TRUE)
-
-# Convert columns to factors
+```
+#### Convert columns to factors
+```{r}
 index <- 1:ncol(data)
 data[ , index] <- lapply(data[ , index], as.factor)
-
-print(data)
-# Percentaje of training examples
+```
+#### Set the Percentaje of training examples
+```{r}
 training_p <- 0.8
+```
+#### Generate 10 Decission Trees
+```{r}
 for (i in 1:10) {
   # Generate data partition 80% training / 20% test. The result is a vector with the indexes 
   # of the examples that will be used for the training of the model.
@@ -56,21 +64,18 @@ for (i in 1:10) {
   
   print(paste0("Accuracy = ", round(accuracy, digits = 8)), quote = FALSE)
   
-  for (j in 1:length(attrs)) {
-    print(paste0("  ", attrs[j]), quote = FALSE)
-  }
-  
   # Print the rules that represent the Tree
   rpart.rules(model, extra = 9, cover = TRUE, digits = 8)
   
   # Plot tree (this method is slow, wait until pot is completed)
-  rpart.plot(model,
-             type = 2,
-             extra = 101,
-             fallen.leaves = FALSE,
-             main = paste0("Resultado del arbol Nº", as.character(i)),
-             sub = paste0("Acccuracy = ", round(accuracy, digits = 8)))
-
+  #renderPlot({
+    rpart.plot(model,
+               type = 2,
+               extra = 101,
+               fallen.leaves = FALSE,
+               main = paste0("Resultado del arbol Nº", as.character(i)),
+               sub = paste0("Acccuracy = ", round(accuracy, digits = 8)))
+  #})
 }
 ```
 
